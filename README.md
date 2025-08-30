@@ -53,7 +53,7 @@ nvm --version
 ```
 
 You should see a version number (like 0.40.3). Now that `nvm` is working, tell it to install and use the version specified in `.nvmrc`.
-This command reads the .nvmrc file and installs the version it finds there:
+This command reads the `.nvmrc` file and installs the version it finds there:
 
 ```bash
 nvm install
