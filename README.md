@@ -50,9 +50,11 @@ Check that the `nvm` command is recognized:
 
 ```bash
 nvm --version
+#You should see a version number (like 0.40.3).
 ```
 
-You should see a version number (like 0.40.3). Now that `nvm` is working, tell it to install and use the version specified in `.nvmrc`.
+Now that `nvm` is working, tell it to install and use the version specified in `.nvmrc`.
+
 This command reads the `.nvmrc` file and installs the version it finds there:
 
 ```bash
@@ -64,3 +66,13 @@ Check that the correct versino is active:
 ```bash
 node --version
 ```
+
+## 🧪 Testing
+
+This project uses **Test-Driven Development** ([TDD](https://en.wikipedia.org/wiki/Test-driven_development)) with the [Vitest](https://vitest.dev/guide/) testing framework. It's very popular and easy to setup:
+
+```bash
+npm install -D vitest
+```
+
+Once you have at least a few tests in your suite, run the tests using `npm run test` from the root of the repo. 
