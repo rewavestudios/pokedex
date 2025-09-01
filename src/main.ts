@@ -1,5 +1,8 @@
+import { startREPL } from "./repl.js";
+
+// Main application entry point function
 function main() {
-  console.log("Hello, world!");
+  startREPL();  // Initialize and start the REPL interface
 }
 
-main();
+main();   // Execute main function to launch the application

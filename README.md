@@ -23,7 +23,8 @@ This project is a command-line interface (CLI) tool that allows users to look up
 ## 💻 Install
 
 Install [NVM](https://github.com/nvm-sh/nvm) (preferred way to manage Node.js versions in this Project).
-Use the following cURL or Wget command:
+
+Use one of the following URLs:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -50,15 +51,14 @@ Check that the `nvm` command is recognized:
 
 ```bash
 nvm --version
-#You should see a version number (like 0.40.3).
+# You should see a version number (like 0.40.3).
 ```
 
-Now that `nvm` is working, tell it to install and use the version specified in `.nvmrc`.
-
-This command reads the `.nvmrc` file and installs the version it finds there:
+Now that `nvm` is working, tell it to install and use the version specified in `.nvmrc`:
 
 ```bash
 nvm install
+# This command reads the `.nvmrc` file and installs the version it finds there.
 ```
 
 Check that the correct versino is active:
