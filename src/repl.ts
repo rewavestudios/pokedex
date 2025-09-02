@@ -1,4 +1,5 @@
 import { createInterface } from "readline";
+import { getCommands } from "./commands.js";
 
 // Main REPL (Read-Eval-Print Loop) function
 export function startREPL() {
@@ -24,7 +25,25 @@ export function startREPL() {
 
     // Extract first word as command name and display it
     const commandName = words[0];
-    console.log(`Your command was: ${commandName}`);
+    // Get command registry
+    const commands = getCommands();
+    const cmd = commands[commandName];
+    // Check if command exists
+    if (!cmd) {
+      console.log(
+        `Unknown command: "${commandName}". Type "help" for a list of commands.`,
+      );
+      rl.prompt();
+      return;
+    }
+
+    try {
+      // Execute command callback with commands registry
+      cmd.callback(commands);
+    } catch (e) {
+      console.log(e);
+    }
+
     // Show prompt again for next command
     rl.prompt();
   });
