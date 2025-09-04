@@ -2,7 +2,7 @@
 import { commandHelp } from "./command_help.js";
 import { commandExit } from "./command_exit.js";
 // Import type only (not executable code)
-import type { CLICommand } from "./command.js";
+import type { CLICommand } from "./state.js";   // Import from state.ts
 
 // Central registry of available commands - acts as a command database
 export function getCommands(): Record<string, CLICommand> {
