@@ -1,7 +1,7 @@
 import type { State } from "./state.js";
 
 // Implementation of the help command functionality
-export function commandHelp(state: State) {   // Accepts State parameter
+export async function commandHelp(state: State) {   // Accepts State parameter
   console.log();
   console.log("Welcome to the Pokedex!");
   console.log("Usage:");

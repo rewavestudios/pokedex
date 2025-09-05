@@ -1,7 +1,7 @@
 import { State } from "./state.js";
 
 // Main REPL (Read-Eval-Print Loop) function
-export function startREPL(state: State) {   // Accepts State object as parameter
+export async function startREPL(state: State) {   // Accepts State object as parameter
   state.readline.prompt();    // Create readline interface for handling terminal input/output
   state.readline.on("line", async (input) => {
     // Clean and parse user input into individual words
@@ -26,9 +26,9 @@ export function startREPL(state: State) {   // Accepts State object as parameter
     }
 
     try {
-      cmd.callback(state);    // Passes entire state object to command callback
+      await cmd.callback(state);    // Passes entire state object to command callback
     } catch (e) {
-      console.log(e);
+      console.log((e as Error).message);
     }
 
     // Show prompt again for next command

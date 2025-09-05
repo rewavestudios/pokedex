@@ -76,3 +76,10 @@ npm install -D vitest
 ```
 
 Once you have at least a few tests in your suite, run the tests using `npm run test` from the root of the repo. 
+
+## References
+
+[JSON](https://jsonlint.com/) lint is a useful tool for debugging JSON, it makes it easier to read.
+
+[JSON to TS](https://transform.tools/json-to-typescript) a useful tool for converting JSON to TS interfaces/types.
+You can use it to generate the structs you'll need to parse the PokeAPI response.
