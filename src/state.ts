@@ -16,7 +16,7 @@ export type State = {
   prevLocationsURL: string;   // Pagination state
 };
 
-export function initState() {
+export function initState(cacheInterval: number) {
   const rl = createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -26,7 +26,7 @@ export function initState() {
   return {
     readline: rl,
     commands: getCommands(),    // Initializes command registry
-    pokeAPI: new PokeAPI(),     // Initialize API client
+    pokeAPI: new PokeAPI(cacheInterval),     // Initialize API client
     nextLocationsURL: "",       // Initialize pagination state
     prevLocationsURL: "",       // Initialize pagination state
   };
