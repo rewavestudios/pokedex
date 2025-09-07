@@ -14,6 +14,7 @@ export async function startREPL(state: State) {   // Accepts State object as par
 
     // Extract first word as command name and display it
     const commandName = words[0];
+    const args = words.slice(1);    // Extract arguments after command name
     // Get command registry
     const cmd = state.commands[commandName];
     // Check if command exists
@@ -26,7 +27,7 @@ export async function startREPL(state: State) {   // Accepts State object as par
     }
 
     try {
-      await cmd.callback(state);    // Passes entire state object to command callback
+      await cmd.callback(state, ...args);    // Passes entire state (arguments) object to command callback
     } catch (e) {
       console.log((e as Error).message);
     }

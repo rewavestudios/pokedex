@@ -5,7 +5,7 @@ import { PokeAPI } from "./pokeapi.js";     // Import PokeAPI
 export type CLICommand = {
   name: string;
   description: string;
-  callback: (state: State) => Promise<void>;   //  Accepts State object
+  callback: (state: State, ...args: string[]) => Promise<void>;   //  Accepts State object
 };
 
 export type State = {
