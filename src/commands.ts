@@ -3,6 +3,7 @@ import { commandHelp } from "./command_help.js";
 import { commandExit } from "./command_exit.js";
 import { commandMapForward, commandMapBack } from "./command_map.js";
 import { commandExplore } from "./command_explore.js";
+import { commandCatch } from "./command_catch.js";
 
 // Import type only (not executable code)
 import type { CLICommand } from "./state.js";   // Import from state.ts
@@ -34,6 +35,11 @@ export function getCommands(): Record<string, CLICommand> {
       name: "explore <location_name>",
       description: "Explore a location",
       callback: commandExplore,   // Points to the actual function in command_explore.ts that accepts args
+    },
+    catch: {
+      name: "catch <pokemon_name>",
+      description: "Attempt to catch a pokemon",
+      callback: commandCatch,   // Points to function that handles catching in command_catch.js
     },
   };
 }
